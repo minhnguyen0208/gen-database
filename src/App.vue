@@ -8,7 +8,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>USER NAME</label>
-                        <b-input-group prepend="hakuhodo_" class="mb-2 mr-sm-2 mb-sm-0">
+                        <b-input-group prepend="" class="mb-2 mr-sm-2 mb-sm-0">
                             <b-input v-model="userName"
                                      placeholder="Please fill Project Name"></b-input>
                         </b-input-group>
@@ -30,11 +30,11 @@
         </div>
         <b-card class="mt-3" header="Data Result">
             <pre class="m-0">
-                CREATE USER &#39;hakuhodo_{{userName}}&#39;@&#39;%&#39; IDENTIFIED BY &#39;{{password}}&#39;;
+                CREATE USER &#39;{{userName}}&#39;@&#39;%&#39; IDENTIFIED BY &#39;{{password}}&#39;;
                 -- Create Database
                 CREATE DATABASE {{databaseName}} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
                 -- Add Permission
-                GRANT ALL PRIVILEGES ON {{databaseName}}.* TO &#39;hakuhodo_{{userName}}&#39;@&#39;%&#39;;
+                GRANT ALL PRIVILEGES ON {{databaseName}}.* TO &#39;{{userName}}&#39;@&#39;%&#39;;
                 -- Reset Privileges
                 FLUSH PRIVILEGES;
             </pre>
